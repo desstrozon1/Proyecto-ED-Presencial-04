@@ -42,7 +42,7 @@ public class ProyectoED {
  * Una nota queda definida por un valor comprendido entre 0 y 10.
  * Estos valores pueden incluir decimales.
  */       
-        double nota2;
+        double nota2 = 0;
  /**
  * Variable tipo double: nota3
  * Una nota queda definida por un valor comprendido entre 0 y 10.
@@ -52,13 +52,7 @@ public class ProyectoED {
         
         nota1 = metodoPrimeraNota(nota1);
 
-        System.out.print("Introduce la segunda nota: ");
-        nota2 = teclado.nextDouble();
-
-        while (nota2 > 10 || nota2 < 0) {
-            System.out.println("La nota introducida no es valida, vuelva a intentarlo.");
-            nota2 = teclado.nextDouble();
-        }
+        nota2 = metodoSegundaNota(nota2);
 
         System.out.print("Introduce la tercera nota: ");
         nota3 = teclado.nextDouble();
@@ -87,6 +81,22 @@ public class ProyectoED {
         return nota1;
     }
 
+     /**
+     * Método que pide al usuario que introduzca por teclado un double
+     *
+     * @param nota2 recibe un double
+     * @return double nota1 que es el valor introducido por teclado
+     */
+    public static double metodoSegundaNota(double nota2) {
+        System.out.print("Introduce la segunda nota: ");
+        nota2 = teclado.nextDouble();
+        while (nota2 > 10 || nota2 < 0) {
+            System.out.println("La nota introducida no es valida, vuelva a intentarlo.");
+            nota2 = teclado.nextDouble();
+        }
+        return nota2;
+    }
+    
     /**
      * Método que calcula la media de las dos mejores notas en base a 3 notas
      * pasadas por parametros.
